@@ -56,6 +56,7 @@ export type Tools = {
     rootUid?: string,
   ) => Array<TreeNode> | ToolError,
   getComponentByUid: (uid: string) => NodeInfo | ToolError,
+  getComponentByHostInstance: (hostInstance: mixed) => NodeInfo | ToolError,
   findComponents: (
     name: string,
     rootUid?: string,
@@ -94,6 +95,7 @@ export function createTools(facade: Facade): Tools {
   return {
     getComponentTree: tree.getComponentTree,
     getComponentByUid: tree.getComponentByUid,
+    getComponentByHostInstance: tree.getComponentByHostInstance,
     findComponents: tree.findComponents,
     getComponentSource: tree.getComponentSource,
     getOwnersStack: tree.getOwnersStack,
